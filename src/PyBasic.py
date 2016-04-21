@@ -13,7 +13,8 @@ def execute(command):
 
 def execute_print(command):
     ''' Handles all print statements '''
-    fragments = command.split('"')
-    arguments = fragments[1]
-    arguments_trimmed = arguments.replace('"', '')
-    return arguments_trimmed
+    if ';' not in command:
+        fragments = command.split('"')
+        arguments = fragments[1]
+        arguments_trimmed = arguments.replace('"', '')
+        return arguments_trimmed
